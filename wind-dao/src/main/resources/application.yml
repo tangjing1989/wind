@@ -1,0 +1,25 @@
+spring:
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/wind?characterEncoding=utf8&useSSL=false
+      username: root
+      password: root
+      #druid_config
+      type: com.alibaba.druid.pool.DruidDataSource
+      max-active: 20
+      initial-size: 1
+      min-idle: 3
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      poolPreparedStatements: true
+      filters: stat,wall,slf4j
+
+
+# mybatis_config
+mybatis:
+  mapper-locations: classpath:com/tangjing/wind/dao/mapper/*.xml
+  typeAliasesPackage: com.tangjing.wind.dao
